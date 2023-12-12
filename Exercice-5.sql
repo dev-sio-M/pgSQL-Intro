@@ -1,8 +1,8 @@
-CREATE OR REPLACE FUNCTION getNomJour(date_param DATE) RETURNS VARCHAR AS $$
+CREATE OR REPLACE FUNCTION getNomJour(date DATE) RETURNS VARCHAR AS $$
 DECLARE
     nom_jour VARCHAR(20);
 BEGIN
-    nom_jour := CASE EXTRACT(DOW FROM date_param)
+    nom_jour := CASE EXTRACT(DOW FROM date)
         WHEN 0 THEN 'Dimanche'
         WHEN 1 THEN 'Lundi'
         WHEN 2 THEN 'Mardi'
